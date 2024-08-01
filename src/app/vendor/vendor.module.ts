@@ -7,9 +7,10 @@ import { MaterialModule } from '../../mat/mat.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { VendorLoginComponent } from './components/vendor-login/vendor-login.component';
+import { VendorDashboardComponent } from './components/vendor-dashboard/vendor-dashboard.component';
 
 @NgModule({
-  declarations: [VendorRegisterComponent, VendorLoginComponent],
+  declarations: [VendorRegisterComponent, VendorLoginComponent, VendorDashboardComponent],
   imports: [
     CommonModule,
     VendorRoutingModule,

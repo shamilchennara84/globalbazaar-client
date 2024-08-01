@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../services/auth.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vendor-login',
@@ -17,7 +18,8 @@ export class VendorLoginComponent implements OnInit, OnDestroy {
   constructor(
     private fb: FormBuilder,
     private toastr: ToastrService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -42,8 +44,8 @@ export class VendorLoginComponent implements OnInit, OnDestroy {
         .signInVendor(credentials)
         .subscribe({
           next: () => {
-            this.toastr.success('Sign-in successful!', 'Success');
-            this.signInForm.reset();
+            this.toastr.success('Login successful!', 'Success');
+             this.router.navigate(['/vendor', 'dashboard']);
           },
           error: (err) => {
             let errorMessage = 'Sign-in failed. Please try again.';
