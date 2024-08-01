@@ -3,16 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { UserHomeComponent } from './pages/user-home/user-home.component';
+import { NavHomeComponent } from './shared/nav-home/nav-home.component';
+import { MaterialModule } from '../mat/mat.module';
+import { ToastrModule } from 'ngx-toastr';
+import { provideHttpClient } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundComponent,
+    UserHomeComponent,
+    NavHomeComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule,
+    ToastrModule.forRoot(),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [provideAnimationsAsync(), provideHttpClient()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
