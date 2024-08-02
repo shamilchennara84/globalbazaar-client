@@ -2,16 +2,14 @@ import { Injectable } from '@angular/core';
 import { jwtDecode } from 'jwt-decode';
 import { DecodedJWT } from '../../core/models/decodedJWT';
 
-
-
 @Injectable({
   providedIn: 'root',
 })
 export class TokenService {
   constructor() {}
 
-  isAdminAndValidToken(): boolean {
-    const token = localStorage.getItem('admintoken');
+  isVendorAndValidToken(): boolean {
+    const token = localStorage.getItem('vendortoken'); 
     if (!token) {
       return false;
     }
@@ -21,22 +19,24 @@ export class TokenService {
       const currentTime = Date.now() / 1000;
 
       if (decodedToken.exp < currentTime) {
-        this.removeAdminToken();
+        this.removeVendorToken(); 
         return false;
       }
 
-      if (decodedToken.role === 'admin') {
+      if (decodedToken.role === 'vendor') {
+       
         return true;
       }
     } catch (error) {
       console.error('Error decoding token:', error);
     }
 
-    this.removeAdminToken();
+    this.removeVendorToken(); 
     return false;
   }
 
-  removeAdminToken() {
-    localStorage.removeItem('admintoken');
+  removeVendorToken() {
+ 
+    localStorage.removeItem('vendortoken'); 
   }
 }

@@ -15,5 +15,5 @@ export interface IVendorSignupResponse {
 export interface IVendorSignInResponse {
   success: boolean;
   message: string;
-  token?: string;
+  token: string;
 }
