@@ -9,7 +9,9 @@ import { UserHomeComponent } from './pages/user-home/user-home.component';
 import { NavHomeComponent } from './shared/nav-home/nav-home.component';
 import { MaterialModule } from '../mat/mat.module';
 import { ToastrModule } from 'ngx-toastr';
-import { provideHttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptors } from '@angular/common/http';
+import { authInterceptor } from './core/interceptors/auth.interceptor';
+
 
 
 @NgModule({
@@ -25,7 +27,10 @@ import { provideHttpClient } from '@angular/common/http';
     MaterialModule,
     ToastrModule.forRoot(),
   ],
-  providers: [provideAnimationsAsync(), provideHttpClient()],
+  providers: [
+    provideAnimationsAsync(),
+    provideHttpClient(withInterceptors([authInterceptor])),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

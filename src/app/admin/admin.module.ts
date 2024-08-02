@@ -21,6 +21,6 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     MaterialModule,
     ReactiveFormsModule,
     FormsModule
-  ]
+  ],
 })
 export class AdminModule { }
