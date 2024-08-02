@@ -1,1 +1,36 @@
-<app-nav-home></app-nav-home>
+<app-nav-home>
+  <div class="p-5 h-screen custom-height">
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div *ngFor="let product of productList">
+        <div class="w-full sm:w-60 h-80 bg-gray-50 p-3 flex flex-col gap-1 rounded-2xl">
+          <div class="h-48 bg-gray-700 rounded-xl">
+            <img [src]="url+product.image" alt="{{product.name}}" class="h-48 w-full object-cover rounded-xl">
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <div class="flex flex-row justify-between items-center">
+              <div class="flex flex-col">
+                <span class="text-xl font-bold text-black">
+                  {{ product.name }}
+                </span>
+
+                <p class=" text-black text-xs overflow-hidden overflow-ellipsis max-w-[250px] max-h-[30px]">
+                  {{ product.description }}
+                </p>
+
+
+              </div>
+              <span class="font-bold text-red-600">₹
+                {{ product.price }}
+              </span>
+            </div>
+            <button class="hover:bg-sky-700 text-gray-50 bg-sky-800 py-2 rounded-md mt-2">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</app-nav-home>
