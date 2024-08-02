@@ -1,6 +1,9 @@
 export const environment = {
-  staticApiURL:'http://localhost:3000/',
-  vendorApiURL: 'http://localhost:3000/api/vendor',
-  adminApiURL: 'http://localhost:3000/api/admin',
-  productApiURL: 'http://localhost:3000/api/product',
+  baseURL: 'https://globalbazaar-server.onrender.com/',
+  apiEndpoints: {
+    static: '',
+    vendor: '/api/vendor',
+    admin: '/api/admin',
+    product: '/api/product',
+  },
 };
