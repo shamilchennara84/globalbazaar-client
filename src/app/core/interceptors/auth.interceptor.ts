@@ -1,10 +1,11 @@
 import { HttpInterceptorFn } from '@angular/common/http';
+import { environment } from '../../../environments/environment.development';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   console.log('interceptor running');
-  const isAdminRequest = req.url.startsWith('http://localhost:3000/api/admin/');
+  const isAdminRequest = req.url.startsWith(`${environment.staticApiURL}api/admin/`);
   const isVendorRequest = req.url.startsWith(
-    'http://localhost:3000/api/vendor/'
+    `${environment.staticApiURL}api/vendor/`
   );
 
   let token;
