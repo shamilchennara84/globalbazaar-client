@@ -1,9 +1,10 @@
+const baseURL= 'https://globalbazaar-server.onrender.com/'
+
 export const environment = {
-  baseURL: 'https://globalbazaar-server.onrender.com/',
-  apiEndpoints: {
-    static: '',
-    vendor: '/api/vendor',
-    admin: '/api/admin',
-    product: '/api/product',
-  },
+  staticApiURL: `${baseURL}`,
+  vendorApiURL: `${baseURL}api/vendor`,
+  adminApiURL: `${baseURL}api/admin`,
+  productApiURL: `${baseURL}api/product`,
 };
+
+
