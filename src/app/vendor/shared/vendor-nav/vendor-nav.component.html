@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button id="menuIcon" aria-label="Example icon-button with menu icon" (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span id="menuTitle">Vendor Dashboard</span>
+
+  <span class="example-spacer"></span>
+  <a mat-button (click)="logout()" class="top-menu-item">Logout</a>
+
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [fixedInViewport]="true" [fixedTopGap]="60" mode="side">
+    <div class="flex flex-col">
+      <div>
+        <a mat-button (click)="logout()" class="side-menu-item">
+          <mat-icon>exit_to_app</mat-icon>Logout
+        </a>
+      </div>
+
+
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="main-content">
+      <ng-content></ng-content>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
