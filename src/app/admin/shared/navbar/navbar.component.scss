@@ -1,0 +1,42 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+#menuTitle {
+  font-size:medium;
+  margin-right: 20px;
+}
+
+.mat-toolbar {
+  height: 60px;
+
+}
+
+.mat-sidenav {
+  width: 160px;
+}
+
+.top-menu-item {
+  margin: 0px 15px;
+ 
+}
+
+.side-menu-item {
+  color: white !important;
+ 
+}
+
+@media (min-width: 900px) {
+  #menuIcon {
+    display: none;
+  }
+
+  .mat-sidenav {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .top-menu-item {
+    display: none;
+  }
+}
